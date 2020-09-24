@@ -47,14 +47,14 @@ explore: outlier_data {
 
 explore: netflow_log_raw_data {
 
-#  join: src_ip_geo {
-#   from: ip_to_geography_lookup
-#     sql_on:
-#     NET.IPV4_TO_INT64(NET.SAFE_IP_FROM_STRING(${netflow_log_raw_data.src_ip}))
-#     BETWEEN ${src_ip_geo.start_ipv4_to_int64} AND  ${src_ip_geo.end_ipv4_int64};;
-#     relationship: many_to_one
-#     type: inner
-#   }
+ join: src_ip_geo {
+  from: ip_to_geography_lookup
+    sql_on:
+    NET.IPV4_TO_INT64(NET.SAFE_IP_FROM_STRING(${netflow_log_raw_data.src_ip}))
+    BETWEEN ${src_ip_geo.start_ipv4_to_int64} AND  ${src_ip_geo.end_ipv4_int64};;
+    relationship: many_to_one
+    type: inner
+  }
 }
 
 
